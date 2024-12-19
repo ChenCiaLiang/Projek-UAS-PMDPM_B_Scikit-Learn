@@ -4,7 +4,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
 
-model = r'-'
+model = r'model_mobilenet.h5'
 class_names = ['Matang', 'Mentah', 'Setengah Matang']
 
 # Function to preprocess and classify image
@@ -47,7 +47,7 @@ def custom_progress_bar (confidence, color1, color2, color3):
     st.sidebar.markdown (progress_html, unsafe_allow_html=True)
 
 # StreamLit UI
-st.title("Prediksi Kematangan Buah Naga - 1839") # 4 digit npm terakhir
+st.title("Prediksi Kematangan Tomat")
 
 # Upload multiple files in the main page
 uploaded_files = st.file_uploader ("Unggah Gambar (Beberapa diperbolehkan)", type=["jpg", "png", "jpeg"], accept_multiple_files=True)
