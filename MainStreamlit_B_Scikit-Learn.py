@@ -4,7 +4,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from PIL import Image
 
-model = load_model('model_mobilenet.h5')
+model = load_model('BestModel_VGG-16_Scikit-Learn.h5')
 class_names = ['Matang', 'Setengah Matang', 'Mentah']
 
 # Function to preprocess and classify image
@@ -29,8 +29,8 @@ def classify_image(image_path):
 # Function to create a custom progress bar
 def custom_progress_bar (confidence, color1, color2, color3):
     percentage1 = confidence[0] * 100 # Confidence for class 0 (Matang)
-    percentage2 = confidence[2] * 100 # Confidence for class 1 (Setengah Matang)
-    percentage3 = confidence[1] * 100 # Confidence for class 2 (Mentah)
+    percentage2 = confidence[1] * 100 # Confidence for class 1 (Setengah Matang)
+    percentage3 = confidence[2] * 100 # Confidence for class 2 (Mentah)
     progress_html = f"""
     <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden; width: 100%; font-size: 14px;">
         <div style="width: {percentage1:.2f}%; background: {color1}; color: white; text-align: center; height: 24px; float: left;"> 
