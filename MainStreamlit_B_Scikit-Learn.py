@@ -29,18 +29,18 @@ def classify_image(image_path):
 # Function to create a custom progress bar
 def custom_progress_bar (confidence, color1, color2, color3):
     percentage1 = confidence[0] * 100 # Confidence for class 0 (Matang)
-    percentage3 = confidence[1] * 100 # Confidence for class 1 (Mentah)
-    percentage2 = confidence[2] * 100 # Confidence for class 2 (Setengah Matang)
+    percentage2 = confidence[2] * 100 # Confidence for class 1 (Setengah Matang)
+    percentage3 = confidence[1] * 100 # Confidence for class 2 (Mentah)
     progress_html = f"""
     <div style="border: 1px solid #ddd; border-radius: 5px; overflow: hidden; width: 100%; font-size: 14px;">
         <div style="width: {percentage1:.2f}%; background: {color1}; color: white; text-align: center; height: 24px; float: left;"> 
             {percentage1:.2f}%
         </div>
-        <div style="width: {percentage2:.2f} %; background: {color2}; color: white; text-align: center; height: 24px; float: left;"> 
+        <div style="width: {percentage2:.2f}%; background: {color2}; color: white; text-align: center; height: 24px; float: left;"> 
             {percentage2:.2f}%
         </div>
-        <div style="width: {percentage3:.2f} %; background: {color3}; color: white; text-align: center; height: 24px; float: left;"> 
-            {percentage2:.2f}%
+        <div style="width: {percentage3:.2f}%; background: {color3}; color: white; text-align: center; height: 24px; float: left;"> 
+            {percentage3:.2f}%
         </div>
     </div>
     """
@@ -71,7 +71,7 @@ if st.sidebar.button("Prediksi"):
                 label_color = first_color if label == "Matang" else second_color if label == "Setengah Matang" else third_color
 
                 # Display prediction results
-                st.sidebar.write("**Nama File:** {uploaded_file.name}")
+                st.sidebar.write(f"**Nama File:** {uploaded_file.name}")
                 st.sidebar.markdown (f" <h4 style='color: {label_color};'>Prediksi: {label}</h4>", unsafe_allow_html=True)
 
                 # Display confidence scores
