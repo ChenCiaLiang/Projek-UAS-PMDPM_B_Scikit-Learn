@@ -1,0 +1,5 @@
+Link GitHub:
+https://github.com/ChenCiaLiang/Projek-UAS-PMDPM_B_Scikit-Learn 
+
+Link StreamLit:
+https://projek-uas-pmdpmbscikit-learn-3t2ewm7vjotrgkfcnnosag.streamlit.app/ 
